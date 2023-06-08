@@ -34,7 +34,7 @@ spec:
             archive:
               none: {}
       container:
-        image: "annapooranisrinivasan/image-seg-train:initial"
+        image: "docker.io/annapooranisrinivasan/image-seg-train:initial"
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
