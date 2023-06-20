@@ -15,7 +15,7 @@ metadata:
     ai.sap.com/version: "1.0.0"
 spec:
   imagePullSecrets:
-    - name: default
+    - name: docker-registry-trial
   entrypoint: image-seg-sk-training
   templates:
     - name: image-seg-sk-training
@@ -27,7 +27,7 @@ spec:
           - name: image-data
             path: /app/data/
       outputs:
-        artifacts:
+        artifacts: 
           - name: image-model-tutorial
             path: /app/model
             globalName: image-model-tutorial
