@@ -33,7 +33,7 @@ spec:
         maxReplicas: 5
         containers:
         - name: kserve-container
-          image: "docker.io/yoshidj/image-seg-serve:mobilenet"
+          image: "docker.io/annapooranisrinivasan/image-seg-train:initial"
           ports:
             - containerPort: 9001
               protocol: TCP
