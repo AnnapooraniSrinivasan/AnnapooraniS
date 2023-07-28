@@ -33,7 +33,7 @@ spec:
         maxReplicas: 5
         containers:
         - name: kserve-container
-          image: "docker.io/annapooranisrinivasan/image-seg-train:initial"
+          image: "docker.io/annapooranisrinivasan/image-seg-serve:latest"
           ports:
             - containerPort: 9001
               protocol: TCP
