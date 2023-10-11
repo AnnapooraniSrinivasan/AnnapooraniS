@@ -24,7 +24,7 @@ spec:
         autoscaling.knative.dev/target: 1
         autoscaling.knative.dev/targetBurstCapacity: 0
       labels: |
-        ai.sap.com/resourcePlan: starter
+        ai.sap.com/resourcePlan: infer.l
     spec: |
       predictor:
         imagePullSecrets:
