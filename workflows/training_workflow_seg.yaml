@@ -21,7 +21,7 @@ spec:
     - name: image-seg-sk-training
       metadata:
         labels:
-          ai.sap.com/resourcePlan: train.1
+          ai.sap.com/resourcePlan: starter
       inputs:
         artifacts:
           - name: image-data
