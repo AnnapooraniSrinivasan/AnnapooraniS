@@ -28,7 +28,7 @@ spec:
     spec: |
       predictor:
         imagePullSecrets:
-          - name: docker-registry-trial
+          - name: visual-part-docker
         minReplicas: 1
         maxReplicas: 5
         containers:
