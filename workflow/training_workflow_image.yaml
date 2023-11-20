@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: sail-traning
+  annotations:
+    scenarios.ai.sap.com/description: "sail training scenario"
+    scenarios.ai.sap.com/name: "sail-training-scenario"
+    executables.ai.sap.com/description: "sail training executable"
+    executables.ai.sap.com/name: "sail-training-exec"
+    artifacts.ai.sap.com/image-data.kind: "dataset"
+    artifacts.ai.sap.com/image-model-tutorial.kind: "model"
+  labels:
+    scenarios.ai.sap.com/id: "sail-train"
+    executables.ai.sap.com/id: "image-sail-train"
+    ai.sap.com/version: "1.0.0"
+spec:
+  imagePullSecrets:
+    - name: sail
+  entrypoint: image-seg-sk-training
+  templates:
+    - name: image-seg-sk-training
+      metadata:
+        labels:
+          ai.sap.com/resourcePlan: train.l
+            archive:
+              none: {}
+      container:
+        image: "docker.io/annapooranisrinivasan/sail:0.0.2.RELEASE"
+        imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args:
+          - >
+            set -e && echo "---Start Training---" && python /sap_rt_opt/app.py && echo "---End Training---"
